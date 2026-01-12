@@ -1,0 +1,61 @@
+1️⃣ isnull() – Detect missing values
+print(df.isnull())
+
+2️⃣ notnull() – Detect non-missing values
+print(df.notnull())
+
+3️⃣ sum() with isnull() – Count missing values
+print(df.isnull().sum())
+
+4️⃣ dropna() – Remove rows with missing values
+df_dropna = df.dropna()
+print(df_dropna)
+
+5️⃣ dropna(axis=1) – Remove columns with missing values
+df_dropna_col = df.dropna(axis=1)
+print(df_dropna_col)
+
+6️⃣ fillna() – Fill missing values
+🔹 Fill with fixed value
+df_fill = df.fillna(0)
+print(df_fill)
+
+🔹 Fill with mean (numeric columns)
+df["Age"].fillna(df["Age"].mean(), inplace=True)
+df["Marks"].fillna(df["Marks"].mean(), inplace=True)
+print(df)
+
+🔹 Fill with mode (categorical)
+df["City"].fillna(df["City"].mode()[0], inplace=True)
+print(df)
+
+7️⃣ replace() – Replace incorrect values
+df_replace = df.replace("Delhi", "New Delhi")
+print(df_replace)
+
+8️⃣ duplicated() – Detect duplicate rows
+print(df.duplicated())
+
+9️⃣ drop_duplicates() – Remove duplicate rows
+df_nodup = df.drop_duplicates()
+print(df_nodup)
+
+🔟 astype() – Change data type
+df["Age"] = df["Age"].astype(int)
+print(df.dtypes)
+
+1️⃣1️⃣ rename() – Rename columns
+df_rename = df.rename(columns={"Marks": "Score"})
+print(df_rename)
+
+1️⃣2️⃣ apply() – Apply custom function
+df["Marks_Status"] = df["Marks"].apply(lambda x: "Pass" if x >= 40 else "Fail")
+print(df)
+
+1️⃣3️⃣ clip() – Limit values
+df["Marks"] = df["Marks"].clip(lower=40, upper=100)
+print(df)
+
+1️⃣4️⃣ round() – Round values
+df["Marks"] = df["Marks"].round(1)
+print(df)
