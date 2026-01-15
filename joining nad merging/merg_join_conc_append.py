@@ -74,3 +74,7 @@ print("\nJoin Using Index:\n", join_df)
 # -------------------------------
 append_df = df1.append(df3, ignore_index=True)
 print("\nAppend DataFrame:\n", append_df)
+
+print("\nAll operations completed successfully.")
+print("Code execution finished.")
+
