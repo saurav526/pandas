@@ -46,4 +46,9 @@ df["Marks"] = df["Marks"].round(1)
 print(df)
 print(df.dtypes)
 df["Age"] = df["Age"].astype(int)
-print(df.dtypes)
+print(df.dtypes) 
+
+
+df.drop(columns=['Age' ,'City'], inplace=True)
+
+print(df) 
